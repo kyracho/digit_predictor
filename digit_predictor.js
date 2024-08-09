@@ -4,7 +4,7 @@ const ctx = canvas.getContext('2d');
 let isDrawing = false;
 
 async function loadModel() {
-    model = await tf.loadLayersModel('model/model.json');
+    model = await tf.loadLayersModel('model.json');
 }
 
 function clearCanvas() {
