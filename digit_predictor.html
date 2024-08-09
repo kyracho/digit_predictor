@@ -1,0 +1,34 @@
+
+<!DOCTYPE html>
+<html>
+
+  <!-- any code in <head> is loaded but isn't visible -->
+  <head> 
+    <title>Kyra Cho : The Diffusion-Reaction Equation</title>
+    <meta charset="UTF-8">
+    <meta name="description" content="This Kyra Cho's self-coded webpage. No website-designing services were used.">
+    <meta name="author" content="Kyra Cho">
+    <link rel="icon" href="assets/favicon.ico" >
+    <link rel="stylesheet" href="css/particles.css" />
+    <link rel="stylesheet" href="css/bluebutton.css"/>
+    <link rel="stylesheet" href="css/style_2.css"/>
+    <link rel="stylesheet" href="css/img.css"/>
+    <link rel="stylesheet" href="css/footer.css"/>
+    <link rel="stylesheet" href="css/grid.css"/>
+    <link rel="stylesheet" href="css/box.css"/>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <script src="js/digit_predictor.js" defer></script>
+  </head>
+  <body>
+
+    <h1>Handwritten Digit Predictor</h1>
+    <canvas id="canvas" width="280" height="280" style="border:1px solid #000000;"></canvas>
+    <button onclick="clearCanvas()">Clear</button>
+    <button onclick="predictDigit()">Predict</button>
+    <p id="prediction"></p>
+    
+
+  </body>
+</html>
+
