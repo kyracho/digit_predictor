@@ -5,7 +5,11 @@
     <script src="digit_predictor.js" defer></script>
   </head>
   <body>
-    <h1>Hello World!</h1>
+    <h1>Handwritten Digit Predictor</h1>
+    <canvas id="canvas" width="280" height="280" style="border:1px solid #000000;"></canvas>
+    <button onclick="clearCanvas()">Clear</button>
+    <button onclick="predictDigit()">Predict</button>
+    <p id="prediction"></p>
 <style>
 h1 {
   color: teal;
