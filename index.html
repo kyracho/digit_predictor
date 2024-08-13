@@ -46,10 +46,12 @@
 
             let reshapedData = [];
             for (let y = 0; y < 28; y++) {
+                let row = [];
                 for (let x = 0; x < 28; x++) {
                     let i = (y * 10) * 280 + (x * 10);
-                    reshapedData.push(grayscaleData[i]);
+                    row.push(grayscaleData[i]);
                 }
+                reshapedData.push(row);
             }
 
             fetch('/predict', {
@@ -72,4 +74,3 @@
     </script>
 </body>
 </html>
-
