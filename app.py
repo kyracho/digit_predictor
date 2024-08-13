@@ -4,7 +4,7 @@ import tensorflow as tf
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)  # This will enable CORS for all routes
+CORS(app)  # Enable CORS for all routes
 
 # Load the model
 model = tf.keras.models.load_model('mnist_model.h5')
@@ -16,11 +16,8 @@ def index():
 @app.route('/predict', methods=['POST'])
 def predict():
     data = request.get_json(force=True)
-    print("Received data:", data)  # Debugging: Print incoming data
-    
     try:
-        image = np.array(data['image']).reshape(28, 28, 1)
-        image = np.expand_dims(image, axis=0)  # Add batch dimension
+        image = np.array(data['image']).reshape(1, 28, 28, 1)
         prediction = model.predict(image)
         digit = np.argmax(prediction, axis=1)[0]
         return jsonify({'digit': int(digit)})
