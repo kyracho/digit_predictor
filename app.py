@@ -4,7 +4,7 @@ import tensorflow as tf
 from flask_cors import CORS
 
 app = Flask(__name__)
-CORS(app)
+CORS(app)  # This will enable CORS for all routes
 
 # Load the model
 model = tf.keras.models.load_model('mnist_model.h5')
