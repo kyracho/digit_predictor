@@ -13,13 +13,11 @@
     <p id="result"></p>
 
     <script>
-        // Set up the canvas for drawing
         let canvas = document.getElementById('canvas');
         let ctx = canvas.getContext('2d');
         ctx.fillStyle = 'black';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        // Add event listeners to draw on the canvas
         let drawing = false;
         canvas.addEventListener('mousedown', () => drawing = true);
         canvas.addEventListener('mouseup', () => drawing = false);
@@ -34,11 +32,9 @@
         }
 
         function predictDigit() {
-            // Get the image data from the canvas
             let imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
             let data = imageData.data;
 
-            // Convert to grayscale
             let grayscaleData = [];
             for (let i = 0; i < data.length; i += 4) {
                 let r = data[i];
@@ -48,7 +44,6 @@
                 grayscaleData.push(gray / 255);
             }
 
-            // Reshape to 28x28
             let reshapedData = [];
             for (let y = 0; y < 28; y++) {
                 for (let x = 0; x < 28; x++) {
@@ -57,8 +52,7 @@
                 }
             }
 
-            // Send the data to the server
-            fetch('https://digit-predictor.herokuapp.com/predict', {
+            fetch('/predict', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -67,15 +61,15 @@
             })
             .then(response => response.json())
             .then(data => {
-                document.getElementById('result').innerText = 'Predicted Digit: ' + data.digit;
+                if (data.error) {
+                    console.error('Error:', data.error);
+                } else {
+                    document.getElementById('result').innerText = 'Predicted Digit: ' + data.digit;
+                }
             })
             .catch(error => console.error('Error:', error));
         }
     </script>
 </body>
 </html>
-    
-<style>
-</style>
-  </body>
-</html>
+
