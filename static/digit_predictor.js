@@ -13,11 +13,11 @@ function clearCanvas() {
 }
 
 function fillCanvasWithBlack() {
-    ctx.fillStyle = 'black'; // Set the fill color to black
-    ctx.fillRect(0, 0, canvas.width, canvas.height); // Fill the entire canvas with black
+    ctx.fillStyle = 'black'; 
+    ctx.fillRect(0, 0, canvas.width, canvas.height); 
 }
 
-// Call this function after clearing the canvas or on page load
+// Call after clearing the canvas or on page load
 fillCanvasWithBlack();
     canvas.addEventListener('mousedown', () => { isDrawing = true; });
     canvas.addEventListener('mouseup', () => { isDrawing = false; ctx.beginPath(); });
@@ -25,7 +25,7 @@ fillCanvasWithBlack();
     // End the stroke when the mouse leaves the canvas
     canvas.addEventListener('mouseleave', () => { isDrawing = false; ctx.beginPath(); });
 
-// Ensure accurate positioning of draw events with respect to the canvas by using .getBoundingClientRect()
+// Ensure accurate positioning of draw events
 function draw(event) {
     if (!isDrawing) return;
 
@@ -48,38 +48,36 @@ function draw(event) {
     ctx.moveTo(x, y);
 }
 
+// Main function
 async function predictDigit() {
     const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
     console.log('First few pixel values:', imageData.data.slice(0, 10));
-    
-    // Log the shape of the imageData
-const width = imageData.width;
-const height = imageData.height;
-const channels = 4;  // RGBA has 4 channels
 
-console.log(`ImageData shape: [${height}, ${width}, ${channels}]`);
-    const pixelData = imageData.data; //testing
-    let summ = 0;// testing 
-    for (let i = 0; i < pixelData.length; i++) {// testing
-        summ += pixelData[i];//testing
-    }//testing
-    console.log('Sum of all pixel data:', summ);//testing
-
+    // const width = imageData.width;
+    // const height = imageData.height;
+    // const channels = 4;  
+    // console.log(`ImageData shape: [${height}, ${width}, ${channels}]`);
+    // const pixelData = imageData.data; 
+    // let summ = 0;
+    // for (let i = 0; i < pixelData.length; i++) {
+    //     summ += pixelData[i];
+    // }
+    // console.log('Sum of all pixel data:', summ);
 
     // Convert imageData to a tensor
     let input = tf.browser.fromPixels(imageData, 1);
 
-    const inputArray = input.arraySync();
-    console.log('First few pixel values of the tensor:', inputArray.slice(0, 10));
+    // const inputArray = input.arraySync();
+    // console.log('First few pixel values of the tensor:', inputArray.slice(0, 10));
 
     // Print the shape and values of the tensor before resizing
-    console.log('Tensor shape before resizing:', input.shape);
-    input.print();
+    // console.log('Tensor shape before resizing:', input.shape);
+    // input.print();
 
-    // Now resize the tensor
+    // Resize the tensor
     input = input.resizeNearestNeighbor([28, 28]);
-    console.log('Tensor shape after resizing:', input.shape);
-    input.print();
+    // console.log('Tensor shape after resizing:', input.shape);
+    // input.print();
 
     input = input.toFloat()
         .div(255.0)
@@ -88,23 +86,22 @@ console.log(`ImageData shape: [${height}, ${width}, ${channels}]`);
     const sum = input.sum().dataSync()[0];//testing
     console.log('Sum of all values in the input tensor:', sum);//testing
 
-       // Check if there is a drawing
-       if (sum === 0) {
-        document.getElementById('prediction').innerText = 'Draw a digit';
-        return; // Exit the function early
-        }
+    // Check if there is a drawing
+    if (sum === 0) {
+    document.getElementById('prediction').innerText = 'Draw a digit';
+    return; // Exit the function early
+    }
     
-
     const prediction = model.predict(input);
 
-     // Convert the prediction tensor to an array and print all probabilities
-     const probabilities = prediction.dataSync();
+    // Convert the prediction tensor to an array and print all probabilities
+    const probabilities = prediction.dataSync();
 
-     // Log all probabilities to the console
-     console.log('Probabilities for each digit:');
-     for (let i = 0; i < probabilities.length; i++) {
-         console.log(`Digit ${i}: ${probabilities[i]}`);
-     }
+    // Log all probabilities to the console
+    // console.log('Probabilities for each digit:');
+    // for (let i = 0; i < probabilities.length; i++) {
+    //     console.log(`Digit ${i}: ${probabilities[i]}`);
+    // }
 
     // Find the index of the maximum value in the prediction tensor
     const digit = tf.argMax(prediction, 1).dataSync()[0];
@@ -117,7 +114,7 @@ console.log(`ImageData shape: [${height}, ${width}, ${channels}]`);
 function initializeMessage() {
     document.getElementById('prediction').innerText = 'Draw a digit';
 }
-initializeMessage();
 
+initializeMessage();
 
 loadModel();
