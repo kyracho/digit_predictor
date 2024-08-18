@@ -98,7 +98,7 @@ button:hover {
 .box {
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
-    box-shadow: 0 10px 20px rgb(255, 255, 255);
+    box-shadow: 0 0 20px rgb(255, 255, 255);
     padding: 1.5vw;
     position: relative;
     max-width: 90%;
