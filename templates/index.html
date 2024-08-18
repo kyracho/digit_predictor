@@ -4,17 +4,30 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
+    <link rel="icon" href="static/favicon.ico" type="image/x-icon">
     <meta name="description" content="This Kyra Cho's self-coded webpage. No website-designing services were used.">
     <meta name="author" content="Kyra Cho">
+    <link rel="stylesheet" href="static/style.css" />
     <!-- <script src="tfjs"></script> -->
     <script src="static/digit_predictor.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
   </head>
   <body>
-    <h1>Handwritten Digit Predictor</h1>
-    <canvas id="canvas" width="280" height="280" style="border:1px solid #000000;"></canvas>
-    <button onclick="clearCanvas()">Clear</button>
-    <button onclick="predictDigit()">Predict</button>
-    <p id="prediction"></p>
+    <main>
+      <h2>Kyra's Digit Predictor</h2>
+      <div class="box">
+        <canvas id="canvas" width="280" height="280" style="border:1px solid #000000;"></canvas>
+        <div class="button-container">
+          <button onclick="predictDigit()">Predict</button>
+          <button onclick="clearCanvas()">Delete</button>
+        </div>
+        <p id="prediction"></p>
+      </div>
+
+      <!-- Javascript for tsParticles -->
+      <script src="https://cdn.jsdelivr.net/npm/tsparticles@1.34.1/tsparticles.min.js" integrity="sha256-D6LXCdCl4meErhc25yXnxIFUtwR96gPo+GtLYv89VZo=" crossorigin="anonymous"></script>
+      <script type="text/javascript" src="static/particles.js"></script>
+      <div id="tsparticles"></div>
+    </main>
   </body>
 </html>

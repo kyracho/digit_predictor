@@ -23,18 +23,28 @@ fillCanvasWithBlack();
 canvas.addEventListener('mousedown', () => { isDrawing = true; });
 canvas.addEventListener('mouseup', () => { isDrawing = false; ctx.beginPath(); });
 canvas.addEventListener('mousemove', draw);
-// canvas.addEventListener('mousedown', draw);
 
+// Ensure accurate positioning of draw events with respect to the canvas by using .getBoundingClientRect()
 function draw(event) {
     if (!isDrawing) return;
+
+    // Get the bounding rectangle of the canvas
+    const rect = canvas.getBoundingClientRect();
+
+    // Calculate the mouse position relative to the canvas
+    const x = event.clientX - rect.left;
+    const y = event.clientY - rect.top;
+
+    console.log('Drawing at:', x, y);
+
     ctx.lineWidth = 10;
     ctx.lineCap = 'round';
     ctx.strokeStyle = 'rgba(255, 255, 255, 1)';
 
-    ctx.lineTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
+    ctx.lineTo(x, y);
     ctx.stroke();
     ctx.beginPath();
-    ctx.moveTo(event.clientX - canvas.offsetLeft, event.clientY - canvas.offsetTop);
+    ctx.moveTo(x, y);
 }
 
 async function predictDigit() {
@@ -54,12 +64,6 @@ console.log(`ImageData shape: [${height}, ${width}, ${channels}]`);
     }//testing
     console.log('Sum of all pixel data:', summ);//testing
 
-    // let input = tf.browser.fromPixels(imageData, 1)
-    //     .resizeNearestNeighbor([28, 28])
-    //     .toFloat()
-    //     .div(255.0)
-    //     .reshape([1, 28, 28, 1]);
-
     // Convert imageData to a tensor
     let input = tf.browser.fromPixels(imageData, 1);
 
@@ -70,20 +74,17 @@ console.log(`ImageData shape: [${height}, ${width}, ${channels}]`);
     console.log('Tensor shape before resizing:', input.shape);
     input.print();
 
-
     // Now resize the tensor
     input = input.resizeNearestNeighbor([28, 28]);
     console.log('Tensor shape after resizing:', input.shape);
     input.print();
 
-        
     input = input.toFloat()
         .div(255.0)
         .reshape([1, 28, 28, 1]);
 
     const sum = input.sum().dataSync()[0];//testing
     console.log('Sum of all values in the input tensor:', sum);//testing
-
 
     const prediction = model.predict(input);
 
@@ -97,8 +98,9 @@ console.log(`ImageData shape: [${height}, ${width}, ${channels}]`);
      }
 
     // Find the index of the maximum value in the prediction tensor
-    digit = tf.argMax(prediction, 1).dataSync()[0];
+    const digit = tf.argMax(prediction, 1).dataSync()[0];
 
+    // Display both maximum probability and predicted digit in the same element
     document.getElementById('prediction').innerText = `Predicted digit: ${digit}`;
 }
 
