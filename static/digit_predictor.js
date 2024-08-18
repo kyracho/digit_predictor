@@ -19,10 +19,11 @@ function fillCanvasWithBlack() {
 
 // Call this function after clearing the canvas or on page load
 fillCanvasWithBlack();
-
-canvas.addEventListener('mousedown', () => { isDrawing = true; });
-canvas.addEventListener('mouseup', () => { isDrawing = false; ctx.beginPath(); });
-canvas.addEventListener('mousemove', draw);
+    canvas.addEventListener('mousedown', () => { isDrawing = true; });
+    canvas.addEventListener('mouseup', () => { isDrawing = false; ctx.beginPath(); });
+    canvas.addEventListener('mousemove', draw);
+    // End the stroke when the mouse leaves the canvas
+    canvas.addEventListener('mouseleave', () => { isDrawing = false; ctx.beginPath(); });
 
 // Ensure accurate positioning of draw events with respect to the canvas by using .getBoundingClientRect()
 function draw(event) {
@@ -64,6 +65,7 @@ console.log(`ImageData shape: [${height}, ${width}, ${channels}]`);
     }//testing
     console.log('Sum of all pixel data:', summ);//testing
 
+
     // Convert imageData to a tensor
     let input = tf.browser.fromPixels(imageData, 1);
 
@@ -86,6 +88,13 @@ console.log(`ImageData shape: [${height}, ${width}, ${channels}]`);
     const sum = input.sum().dataSync()[0];//testing
     console.log('Sum of all values in the input tensor:', sum);//testing
 
+       // Check if there is a drawing
+       if (sum === 0) {
+        document.getElementById('prediction').innerText = 'Draw a digit';
+        return; // Exit the function early
+        }
+    
+
     const prediction = model.predict(input);
 
      // Convert the prediction tensor to an array and print all probabilities
@@ -103,5 +112,12 @@ console.log(`ImageData shape: [${height}, ${width}, ${channels}]`);
     // Display both maximum probability and predicted digit in the same element
     document.getElementById('prediction').innerText = `Predicted digit: ${digit}`;
 }
+
+// Function to initialize a message 
+function initializeMessage() {
+    document.getElementById('prediction').innerText = 'Draw a digit';
+}
+initializeMessage();
+
 
 loadModel();
