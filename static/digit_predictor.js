@@ -127,7 +127,7 @@ async function submitNumber() {
 
     document.getElementById('currentscore').innerText = `Current probability: ${current_score}`;
 
-    console.log("Current probability: ", current_score);
+    console.log("Current score: ", current_score);
 
     // Send current_score to the Flask backend
     const response = await fetch('/submit-number', {
