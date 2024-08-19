@@ -31,9 +31,10 @@
                 <br><br>
                 A user draws a digit on the canvas.
                 The drawn digit is converted to a format just like the MNIST dataset (28x28 grayscale image). The preprocessed image is fed into the model (described below), 
-                which infers the data and computes the probability distribution over the possible digits. The digit with the maximum probability is chosen and displayed. 
-                Current score displays the corresponding percent probability, and the high score, across all users, is stored in a Heroku PostgreSQL database which 
-                gets automatically reset, every day, at midnight, UTC. 
+                which infers the data and computes the probability distribution over the possible digits. The digit with the maximum probability is chosen to be displayed. 
+                The corresponding percent probability is displayed, below, as the current score. The highest percent probability, or "today's high score", is stored in a 
+                Heroku PostgreSQL database, so that users can refer to the highest percentage and try to do improve upon it. 
+                You will see that it's very easy to get a prediction with a 100 percent probability, which is why I'm making the database reset daily at 12:00AM UTC. 
                 <br><br>
                 The keras model has a convolutional layer with 32 filters and relu activation, a second convolutional layer with 64 filters and relu activation,
                 a maxpooling layer, a flatten layer, a dense layer with 128 neurons and relu activation, a dropout layer with a
