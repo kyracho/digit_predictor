@@ -33,7 +33,7 @@
                 The drawn digit is converted to a format just like the MNIST dataset (28x28 grayscale image). The preprocessed image is fed into the model (described below), 
                 which infers the data and computes the probability distribution over the possible digits. The digit with the maximum probability is chosen and displayed. 
                 Current score displays the corresponding percent probability, and the high score, across all users, is stored in a Heroku PostgreSQL database which 
-                gets automatically reset, every day, at midnight. 
+                gets automatically reset, every day, at midnight, UTC. 
                 <br><br>
                 The keras model has a convolutional layer with 32 filters and relu activation, a second convolutional layer with 64 filters and relu activation,
                 a maxpooling layer, a flatten layer, a dense layer with 128 neurons and relu activation, a dropout layer with a
