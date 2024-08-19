@@ -25,8 +25,7 @@
             <div class="modal-content">
               <span class="close">&times;</span>
               <p>
-                Welcome to my digit predictor.<br><br>
-                You're looking at a toy aplication that uses a convolutional neural network (CNN) model trained on MNIST data.<br><br>
+                Welcome to my digit predictor. You're looking at a toy aplication that uses a convolutional neural network (CNN) model trained on MNIST data.<br><br>
                 Here is how it works: 
                 <br><br>
                 A user draws a digit on the canvas.
@@ -34,7 +33,7 @@
                 which infers the data and computes the probability distribution over the possible digits. The digit with the maximum probability is chosen to be displayed. 
                 The corresponding percent probability is displayed, below, as the current score. The highest percent probability, or "today's high score", is stored in a 
                 Heroku PostgreSQL database, so that users can refer to the highest percentage and try to do improve upon it. 
-                You will see that it's very easy to get a prediction with a 100 percent probability, which is why I'm making the database reset daily at 12:00AM UTC. 
+                You will see that it's very easy to get a prediction with a 100 percent probability. The database resets daily at 12:00AM UTC. 
                 <br><br>
                 The keras model has a convolutional layer with 32 filters and relu activation, a second convolutional layer with 64 filters and relu activation,
                 a maxpooling layer, a flatten layer, a dense layer with 128 neurons and relu activation, a dropout layer with a
