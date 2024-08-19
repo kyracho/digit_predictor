@@ -54,6 +54,26 @@ main h2 {
     z-index: 10;
 }
 
+#highscore{
+    margin: 20px 0 0 0;
+    padding: 0;
+    font-size: 22px ;
+    font: 'Open Sans';
+    color: #000000;
+    text-align: center;
+    z-index: 10;
+}
+
+#currentscore{
+    margin: 20px 0 0 0;
+    padding: 0;
+    font-size: 22px ;
+    font: 'Open Sans';
+    color: #000000;
+    text-align: center;
+    z-index: 10;
+}
+
 #tsparticles {
     position: fixed;
     margin: 0;

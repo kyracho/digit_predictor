@@ -51,7 +51,7 @@ function draw(event) {
 // Main function
 async function predictDigit() {
     const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-    console.log('First few pixel values:', imageData.data.slice(0, 10));
+    // console.log('First few pixel values:', imageData.data.slice(0, 10));
 
     // const width = imageData.width;
     // const height = imageData.height;
@@ -84,7 +84,7 @@ async function predictDigit() {
         .reshape([1, 28, 28, 1]);
 
     const sum = input.sum().dataSync()[0];//testing
-    console.log('Sum of all values in the input tensor:', sum);//testing
+    // console.log('Sum of all values in the input tensor:', sum);//testing
 
     // Check if there is a drawing
     if (sum === 0) {
@@ -96,6 +96,8 @@ async function predictDigit() {
 
     // Convert the prediction tensor to an array and print all probabilities
     const probabilities = prediction.dataSync();
+    const maxProbability = Math.max(...probabilities);
+    const current_score = maxProbability * 100
 
     // Log all probabilities to the console
     // console.log('Probabilities for each digit:');
@@ -108,12 +110,38 @@ async function predictDigit() {
 
     // Display both maximum probability and predicted digit in the same element
     document.getElementById('prediction').innerText = `Predicted digit: ${digit}`;
+    return { current_score };
+
 }
 
 // Function to initialize a message 
 function initializeMessage() {
     document.getElementById('prediction').innerText = 'Draw a digit';
 }
+
+// Function to update the high score
+async function submitNumber() {
+    // Call the predictDigit function and wait for the current_score
+    let { current_score } = await predictDigit();
+    current_score = current_score.toFixed(2);
+
+    document.getElementById('currentscore').innerText = `Current score: ${current_score}`;
+
+    console.log("Current score: ", current_score);
+
+    // Send current_score to the Flask backend
+    const response = await fetch('/submit-number', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ current_score }),
+    });
+
+    const result = await response.json();
+    document.getElementById('highscore').textContent = result.message;
+}
+
 
 initializeMessage();
 

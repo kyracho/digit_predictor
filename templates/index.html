@@ -17,7 +17,7 @@
       <div class="box">
         <canvas id="canvas" width="280" height="280" style="border:0px solid #000000;"></canvas>
         <div class="button-container">
-          <button onclick="predictDigit()">Predict</button>
+          <button onclick="predictDigit(); submitNumber();">Predict</button>
           <button onclick="clearCanvas()">Re-do</button>
           <button onclick="showReadme()">About</button>
           <!-- The Modal -->
@@ -41,6 +41,8 @@
           </div>
         </div>
         <p id="prediction"></p>
+        <p id="currentscore"></p>
+        <p id="highscore"></p>
       </div>
       <div class="spacer"></div>
 
@@ -71,6 +73,9 @@
             }
         }
       </script>
+
+
+      
     </main>
   </body>
 </html>
