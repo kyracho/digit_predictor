@@ -125,9 +125,9 @@ async function submitNumber() {
     let { current_score } = await predictDigit();
     current_score = current_score.toFixed(2);
 
-    document.getElementById('currentscore').innerText = `Current score: ${current_score}`;
+    document.getElementById('currentscore').innerText = `Current probability: ${current_score}`;
 
-    console.log("Current score: ", current_score);
+    console.log("Current probability: ", current_score);
 
     // Send current_score to the Flask backend
     const response = await fetch('/submit-number', {
