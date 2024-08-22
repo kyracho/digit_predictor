@@ -1,4 +1,4 @@
-Welcome to my digit predictor. You're looking at a toy aplication that uses a convolutional neural network (CNN) model trained on MNIST data.
+Welcome to my digit predictor. It is a toy aplication that uses a convolutional neural network (CNN) model trained on MNIST data, using PostgreSQL to keep track of a "global high score". 
 
 
 <img width="471" alt="Screenshot 2024-08-19 at 5 47 53 PM" src="https://github.com/user-attachments/assets/c81a0a0e-0578-48db-b932-ecd6669cdbfb">
