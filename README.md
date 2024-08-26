@@ -1,8 +1,9 @@
-<img width="471" alt="Screenshot 2024-08-19 at 5 47 53 PM" src="https://github.com/user-attachments/assets/c81a0a0e-0578-48db-b932-ecd6669cdbfb">
+<img width="510" alt="Screenshot 2024-08-26 at 10 53 59 AM" src="https://github.com/user-attachments/assets/fd70b903-4e12-41be-9722-3c69a197c704">
+
 
 ### Welcome to my digit predictor. 
 
-It is a toy aplication that uses a convolutional neural network (CNN) model.
+It is a toy aplication that uses a convolutional neural network (CNN) model for machine learning on the cloud. 
 
 **Here is how it works:**
 
