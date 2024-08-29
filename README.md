@@ -1,6 +1,4 @@
-## Digit predictor
-
-Hi, welcome. 
+## Hi, welcome!
 
 This is a toy aplication that uses a convolutional neural network (CNN) model for machine learning on the cloud. 
 
