@@ -1,8 +1,8 @@
-## Welcome to my digit predictor! 
+## Hi, welcome!
 
-It is a toy aplication that uses a convolutional neural network (CNN) model for machine learning on the cloud. 
+This is a toy aplication that uses a convolutional neural network (CNN) model for machine learning on the cloud. 
 
-**Here is how it works:**
+**How it works:**
 
 A user draws a digit on the canvas.
 The drawn digit is converted to a format just like the MNIST dataset (28x28 grayscale image). The preprocessed image is fed into the model (described below), 
