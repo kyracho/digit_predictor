@@ -159,13 +159,3 @@ This app is deployed on **Heroku**. To deploy your own version:
 ## Contributing
 
 Contributions are welcome! Feel free to fork the repository and create a pull request, or open an issue if you encounter any problems.
-
----
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-With this README, users will have a clear guide on how to set up and deploy the **Digit Predictor App**. Let me know if you need any further details!
