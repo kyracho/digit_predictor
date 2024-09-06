@@ -14,7 +14,7 @@ The keras model has a convolutional layer with 32 filters and relu activation, a
  <img width="350" alt="Screenshot 2024-08-26 at 10 53 59 AM" src="https://github.com/user-attachments/assets/fd70b903-4e12-41be-9722-3c69a197c704">
 
 
-## If you want to deploy your own digit predictor application, here is a rough outline the process:
+## A rough outline the process:
 
 ### Table of Contents
 - [Tech Stack](#tech-stack)
