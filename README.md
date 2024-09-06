@@ -14,9 +14,9 @@ The keras model has a convolutional layer with 32 filters and relu activation, a
  <img width="350" alt="Screenshot 2024-08-26 at 10 53 59 AM" src="https://github.com/user-attachments/assets/fd70b903-4e12-41be-9722-3c69a197c704">
 
 ---
-If you want to recreate my app, here are the steps that roughly describe the process. 
+## If you want to recreate my app, here are the steps that roughly describe the process. 
 
-## Table of Contents
+### Table of Contents
 - [Tech Stack](#tech-stack)
 - [Features](#features)
 - [Getting Started](#getting-started)
