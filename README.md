@@ -24,7 +24,6 @@ The keras model has a convolutional layer with 32 filters and relu activation, a
   - [Installation](#installation)
   - [Running the App Locally](#running-the-app-locally)
 - [Deployment](#deployment)
-- [Usage](#usage)
 - [Contributing](#contributing)
 
 ---
@@ -143,15 +142,6 @@ This app is deployed on **Heroku**. To deploy your own version:
 
 6. **Access Your Deployed App**:
    Once the deployment process is complete, you can access the app by visiting the Heroku-provided URL.
-
----
-
-## Usage
-
-- Navigate to the app’s URL.
-- Draw a digit (0-9) on the canvas using your mouse.
-- Click "Predict" to get a real-time prediction from the CNN model.
-- The app will display the predicted digit and the confidence score.
 
 ---
 
