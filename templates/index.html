@@ -28,11 +28,9 @@
                 Hi, welcome. This is a toy application that uses a convolutional neural network (CNN) model for machine learning on the cloud.<br><br>
                 How it works: 
                 <br><br>
-                A user draws a digit on the canvas.
-                The drawn digit is converted to a format just like the MNIST dataset (28x28 grayscale image). The preprocessed image is fed into the model (described below), 
-                which infers the data and computes the probability distribution over the possible digits. The digit with the maximum probability is displayed, along with 
-                the highest probability, fetched from a PostgreSQL database. The database resets daily at 12:00AM EST. 
-                It's very easy to get a prediction with a 100 percent probability.
+                A user draws a digit on the canvas. The drawn digit is converted to a format just like the MNIST dataset (28x28 grayscale image). 
+                The preprocessed image is fed into the model (described below), which infers the data and computes the probability distribution over the possible digits. 
+                The predicted digit is displayed with the confidence score, along with the daily high score fetched from a PostgreSQL database. The database resets daily at 12:00AM EST.
                 <br><br>
                 The keras model has a convolutional layer with 32 filters and relu activation, a second convolutional layer with 64 filters and relu activation,
                 a maxpooling layer, a flatten layer, a dense layer with 128 neurons and relu activation, a dropout layer with a
