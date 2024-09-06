@@ -6,9 +6,8 @@ Hi, welcome. This is a toy aplication that uses a convolutional neural network (
 
 A user draws a digit on the canvas.
 The drawn digit is converted to a format just like the MNIST dataset (28x28 grayscale image). The preprocessed image is fed into the model (described below), 
-which infers the data and computes the probability distribution over the possible digits. The digit with the maximum probability is displayed, along with 
-the highest probability, fetched from a PostgreSQL database. The database resets daily at 12:00AM EST. 
-You will see that it's very easy to get a prediction with a 100 percent probability.
+which infers the data and computes the probability distribution over the possible digits. The predicted digit is displayed with 
+the confidence score, along with the daily high score fetched from a PostgreSQL database. The database resets daily at 12:00AM EST.
 
 The keras model has a convolutional layer with 32 filters and relu activation, a second convolutional layer with 64 filters and relu activation, a maxpooling layer, a flatten layer, a dense layer with 128 neurons and relu activation, a dropout layer with a .5 dropout rate, and an output layer. The optimizer is AdaDelta, which automatically adjusts the learning rate based on past gradient information, and the loss function is categorical cross entropy. The model is around 98.5% accurate on MNIST test data.
   
@@ -149,9 +148,9 @@ This app is deployed on **Heroku**. To deploy your own version:
 ## Usage
 
 - Navigate to the app’s URL.
-- Draw a digit (0-9) on the canvas using your mouse or finger (if on a touchscreen).
+- Draw a digit (0-9) on the canvas using your mouse.
 - Click "Predict" to get a real-time prediction from the CNN model.
-- The app will display the predicted digit and confidence score.
+- The app will display the predicted digit and the confidence score.
 
 ---
 
