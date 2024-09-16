@@ -1,6 +1,6 @@
 ## Digit Predictor Application
 
-Hi, welcome. This is a toy application that uses a convolutional neural network (CNN) model for machine learning on the cloud. 
+Hi, welcome. This is my toy application that uses a convolutional neural network (CNN) model for machine learning on the cloud. 
 
 **How it works:**
 
@@ -47,6 +47,7 @@ The keras model has a convolutional layer with 32 filters and relu activation, a
 ---
 
 ## Getting Started
+if you are interested in copying my project, follow these steps to deploy the project on Heroku. 
 
 ### Prerequisites
 Before you begin, ensure you have the following installed:
