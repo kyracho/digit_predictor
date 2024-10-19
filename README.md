@@ -11,7 +11,8 @@ the confidence score, along with the daily high score fetched from a PostgreSQL 
 
 The keras model has a convolutional layer with 32 filters and relu activation, a second convolutional layer with 64 filters and relu activation, a maxpooling layer, a flatten layer, a dense layer with 128 neurons and relu activation, a dropout layer with a .5 dropout rate, and an output layer. The optimizer is AdaDelta, which automatically adjusts the learning rate based on past gradient information, and the loss function is categorical cross entropy. The model is around 98.5% accurate on MNIST test data.
   
- <img width="350" alt="Screenshot 2024-08-26 at 10 53 59 AM" src="https://github.com/user-attachments/assets/fd70b903-4e12-41be-9722-3c69a197c704">
+<img width="577" alt="Screenshot 2024-10-18 at 10 58 13 PM" src="https://github.com/user-attachments/assets/17af2efc-c348-4800-a9b7-c3c47d92eb26">
+
 
 
 ## A rough outline the process:
