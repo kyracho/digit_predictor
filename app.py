@@ -49,7 +49,7 @@ def submit_number():
         if current_score > max_score:
             cursor.execute("UPDATE score_table SET value = %s WHERE id = 1;", (current_score,))
             conn.commit()
-            message = f"Today's top score:  {current_score}"
+            message = f"Today's global top score:  {current_score}"
             print(f"Database updated with new score: {current_score}")
         else:
             message = f"Today's top score: {max_score}"
