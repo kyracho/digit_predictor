@@ -148,7 +148,7 @@ button:hover {
 /* The Modal  */
 .modal {
     display: none; 
-    margin: 8% auto;
+    margin: 5% auto;
     position: fixed;
     z-index: 10; 
     left: 0;
