@@ -148,7 +148,7 @@ button:hover {
 /* The Modal  */
 .modal {
     display: none; 
-    margin: 5% auto;
+    margin: 10% auto;
     position: fixed;
     z-index: 10; 
     left: 0;
@@ -160,11 +160,11 @@ button:hover {
 
 /* Modal Content/Box */
 .modal-content {
-    background-color: #fefefe;
+    background-color: #3655b3;
     margin: 15% auto; 
     border-radius: 10px;
     padding: 20px;
-    border: 1px solid #888;
+    border: 1px solid #ffffff;
     width: 80%; 
 }
 
@@ -172,7 +172,7 @@ button:hover {
 .modal-content h2 {
     font: 'Open Sans';
     font-size: 18px;
-    color: #333;
+    color: #ffffff;
     margin-bottom: 24px;
 }
 
@@ -180,7 +180,7 @@ button:hover {
 .modal-content p {
     font: 'Open Sans';
     font-size: 14px;
-    color: #333;
+    color: #ffffff;
     text-align: left;
     margin-bottom: 14px;
 }
