@@ -22,8 +22,6 @@ The keras model has a convolutional layer with 32 filters and relu activation, a
 - **Database**: PostgreSQL
 - **Deployment**: Heroku
 
----
-
 ## Features
 - Handwritten digit prediction using a CNN model.
 - A simple web-based interface where users can draw digits in the browser.
