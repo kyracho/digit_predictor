@@ -52,7 +52,7 @@ def submit_number():
             message = f"Today's global top score:  {current_score}"
             print(f"Database updated with new score: {current_score}")
         else:
-            message = f"Today's top score: {max_score}"
+            message = f"Today's global top score: {max_score}"
             print(f"Received score ({current_score}) is not higher than current max score({max_score})")
 
         cursor.close()
