@@ -3,7 +3,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ffffff; 
+    background-color: #ffffff00; 
     height: 100vh; 
     border-radius: 0px; 
     margin: 0 auto;
@@ -28,7 +28,7 @@ main h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ffffff;
+    background-color: #ffffff00;
     font-family: 'Open Sans Condensed', sans-serif;
     font-size: 1.15em;
     text-rendering: optimizeLegibility;
