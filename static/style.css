@@ -147,6 +147,7 @@ button:hover {
     width: 600px;
     height: auto;
     overflow: auto;
+    z-index: 10;
 }
 
 
