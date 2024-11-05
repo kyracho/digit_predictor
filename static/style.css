@@ -141,7 +141,7 @@ button:hover {
 .modal {
     display: none;
     position: fixed;
-    top: 50%;
+    top: 70%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 600px;
@@ -153,8 +153,8 @@ button:hover {
 .modal#readmeModal {
     width:100vw;
     height:100vh;
-    color: #00000000
-    background-color:#00000000
+    color: #00000000;
+    background-color: #00000000
 }
 
 
