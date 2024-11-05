@@ -22,7 +22,6 @@ main h2 {
     z-index: 10;
     font-size: 20px;
     z-index:9;
-    position: relative;
 }
 
   body {
@@ -142,11 +141,10 @@ button:hover {
 .modal {
     display: none; 
     margin: 10% auto;
-    position: relative;
-    z-index: 10; 
+    position: fixed;
     left: 0;
     top: 0;
-    width: 100%;
+    width: 600px;
     height: 100%;
     overflow: auto;
     z-index:10;
