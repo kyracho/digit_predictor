@@ -53,22 +53,21 @@
       <div id="tsparticles"></div>-->
 
       <script>
-        // Function to show the modal
-        function showReadme() {
-            var modal = document.getElementById("readmeModal");
-            modal.style.display = "block";
-        }
-      
-        // Function to close the modal when clicking outside of it
-        window.onclick = function(event) {
-            var modal = document.getElementById("readmeModal");
-            if (event.target == modal) {
-                modal.style.display = "none";
+            // Function to show the modal
+            function showReadme() {
+                var modal = document.getElementById("readmeModal");
+                modal.style.display = "block";
             }
-        }
+
+            // Function to close the modal when clicking outside of it
+            window.onclick = function(event) {
+                var modal = document.getElementById("readmeModal");
+                var modalContent = document.querySelector(".modal-content");
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
       </script>
-
-
       
     </main>
   </body>
