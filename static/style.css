@@ -151,7 +151,6 @@ button:hover {
 
   .modal-content {
     background-color: #3655b3;
-    margin: 15% auto; 
     border-radius: 10px;
     padding: 20px;
     border: 1px solid #ffffff;
@@ -161,36 +160,13 @@ button:hover {
    transform: translate(-50%, -50%);
   }
 
-/* Style the h2 inside the modal */
-.modal-content h2 {
-    font: 'Open Sans';
-    font-size: 18px;
-    color: #ffffff;
-    margin-bottom: 24px;
-}
 
-/* Style the p inside the modal */
 .modal-content p {
     font: 'Open Sans';
     font-size: 14px;
     color: #ffffff;
     text-align: left;
     margin-bottom: 14px;
-}
-
-/* The Close Button */
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 35px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
 }
 
 .spacer {
