@@ -156,6 +156,9 @@ button:hover {
     padding: 20px;
     border: 1px solid #ffffff;
     width: 400px;
+    top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
   }
 
 /* Style the h2 inside the modal */
