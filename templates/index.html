@@ -21,23 +21,13 @@
           <button onclick="clearCanvas()">Re-do</button>
           <button onclick="showReadme()">Blueprint</button>
           <!-- The Modal -->
-<!--           <div id="readmeModal" class="modal">
+          <div id="readmeModal" class="modal">
             <div class="modal-content">
               <p>
-                Hi, welcome. This is my toy application, hosted oh Heroku with Flask, that uses a convolutional neural network (CNN) model for machine learning on the cloud.
-                <br><br>
-                You can draw a digit on the canvas. The drawn digit is converted to a format just like the MNIST dataset (28x28 grayscale image). 
-                The preprocessed image is fed into the model (described below), which infers the data and computes the probability distribution over the possible digits. 
-                The predicted digit is displayed with the confidence score, along with the daily high score fetched from a PostgreSQL database. The database resets daily at 12:00AM EST.
-                <br><br>
-                The keras model has a convolutional layer with 32 filters and relu activation, a second convolutional layer with 64 filters and relu activation,
-                a maxpooling layer, a flatten layer, a dense layer with 128 neurons and relu activation, a dropout layer with a
-                .5 dropout rate, and an output layer. The optimizer is AdaDelta, which automatically adjusts the learning rate 
-                based on past gradient information, and the loss function is categorical cross entropy. The model is around 98.5% accurate 
-                on MNIST test data. 
+                <a Test Ur Digits is made with Flask and a CNN model trained on MNIST data, deployed on Heroku. <a href="https://github.com/kyracho/digit_predictor">Github</a>
               </p>
             </div>
-          </div> -->
+          </div>
         </div>
         <div class="textwrapper">
           <p id="prediction" ></p>
