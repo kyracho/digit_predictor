@@ -17,9 +17,9 @@
       <div class="box">
         <canvas id="canvas" width="280" height="280" style="border:0px solid #000000;"></canvas>
         <div class="button-container">
-          <button onclick="predictDigit(); submitNumber();">Predict</button>
-          <button onclick="clearCanvas()">Re-do</button>
-          <button onclick="showReadme()">Blueprint</button>
+          <button onclick="predictDigit(); submitNumber(); playSound();">Predict</button>
+          <button onclick="clearCanvas(); playSound();">Re-do</button>
+          <button onclick="showReadme(); playSound()">Blueprint</button>
           <!-- The Modal -->
           <div id="readmeModal" class="modal">
             <div class="modal-content">
@@ -41,22 +41,36 @@
       <!--<script src="https://cdn.jsdelivr.net/npm/tsparticles@1.34.1/tsparticles.min.js" integrity="sha256-D6LXCdCl4meErhc25yXnxIFUtwR96gPo+GtLYv89VZo=" crossorigin="anonymous"></script>
       <script type="text/javascript" src="static/particles.js"></script>
       <div id="tsparticles"></div>-->
+      <audio id="sound-effect" preload="auto">
+        <source src="{{ url_for('static', filename='static/button.wav') }}" type="audio/wav">
+        <source src="{{ url_for('static', filename='static/button.mp3') }}" type="audio/mpeg">
+      </audio>
 
       <script>
-            // Function to show the modal
-            function showReadme() {
-                var modal = document.getElementById("readmeModal");
-                modal.style.display = "block";
-            }
+        // Function to show the modal
+        function showReadme() {
+            var modal = document.getElementById("readmeModal");
+            modal.style.display = "block";
+        }
 
-            // Function to close the modal when clicking outside of it
-            window.onclick = function(event) {
-                var modal = document.getElementById("readmeModal");
-                var modalContent = document.querySelector(".modal-content");
-                if (event.target == modal) {
-                    modal.style.display = "none";
-                }
-            }
+        // Function to close the modal when clicking outside of it
+        window.onclick = function(event) {
+          var modal = document.getElementById("readmeModal");
+          var modalContent = document.querySelector(".modal-content");
+          if (event.target == modal) {
+              modal.style.display = "none";
+          }
+        }
+        function playSound() {
+          var sound = document.getElementById("sound-effect");
+          try {
+              sound.play();
+              console.log("Function called");
+          } catch (error) {
+              console.error("Error playing sound:", error);
+          }
+        }
+
       </script>
       
     </main>

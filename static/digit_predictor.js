@@ -36,7 +36,7 @@ function draw(event) {
     const x = event.clientX - rect.left;
     const y = event.clientY - rect.top;
 
-    console.log('Drawing at:', x, y);
+    // console.log('Drawing at:', x, y);
 
     ctx.lineWidth = 10;
     ctx.lineCap = 'round';
