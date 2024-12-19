@@ -113,8 +113,8 @@ button {
 }
 
 button:hover {
-    color: #ffffff;
-    background: #000000;
+    color: #000000;
+    background: #ffffff;
 }
 
 .button-container {
